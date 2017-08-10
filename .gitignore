@@ -1,0 +1,13 @@
+# python environment
+env
+
+# draft folders
+./demo/drf/drafts/
+
+# extensions
+*.pyc
+*.sqlite3
+
+# directories
+__pycache__
+
