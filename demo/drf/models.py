@@ -11,19 +11,6 @@ INVOICE_TYPE = (
 )
 
 
-# class User(models.Model):
-#     user_pk = models.AutoField(primary_key=True)
-#     username = models.TextField(blank=False, null=False)
-#     password = models.TextField()
-#     role = models.TextField(null=False, default='')
-
-#     class Meta:
-#         ordering = ('username',)
-
-#     def __str__(self):
-#         return 'user {} in role {}'.format(self.username, self.role)
-
-
 class Product(models.Model):
     product_pk = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, blank=True, default='')

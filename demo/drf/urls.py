@@ -9,10 +9,12 @@ from rest_framework_jwt.views import refresh_jwt_token
 from rest_framework_jwt.views import verify_jwt_token
 
 urlpatterns = [
-    url(r'^products/$', views.ProductList.as_view()),
+    url(r'^api/products/$', views.ProductList.as_view()),
+    url(r'^api/products/(?P<pk>[0-9]+)/$', views.ProductDetail.as_view()),
+    # url(r'^api/products/(?P<name>[\w\-]+)/$', views.ProductDetail.as_view()),
 
-    url(r'^products/(?P<pk>[0-9]+)/$', views.ProductDetail.as_view()),
-    # url(r'^products/(?P<name>[\w\-]+)/$', views.ProductDetail.as_view()),
+    url(r'^api/invoices/$', views.InvoiceList.as_view()),
+    url(r'^api/invoices/(?P<pk>[0-9]+)/$', views.InvoiceDetail.as_view()),
 ]
 
 urlpatterns += [
