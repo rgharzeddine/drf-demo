@@ -1,5 +1,6 @@
 from drf.models import Product, Invoice
 from drf.serializers import ProductSerializer, InvoiceSerializer
+
 from rest_framework import permissions
 
 from rest_framework import mixins
@@ -22,7 +23,6 @@ class ProductDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.D
 
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    # lookup_field = 'Productname'
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)

@@ -1,5 +1,4 @@
 from django.db import models
-
 from django.contrib.auth.models import User
 
 IN = 'In'
@@ -18,7 +17,7 @@ class Product(models.Model):
     dummy = models.TextField(default='')
     created_by = models.ForeignKey(
         User,
-        related_name='product_created_by',
+        related_name='user_products',
         on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -34,11 +33,11 @@ class Invoice(models.Model):
     dummy = models.TextField(default='')
     salesman = models.ForeignKey(
         User,
-        related_name='invoice_salesman',
+        related_name='salesman_invoices',
         on_delete=models.CASCADE)
     created_by = models.ForeignKey(
         User,
-        related_name='invoice_created_by',
+        related_name='user_invoices',
         on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 

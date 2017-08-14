@@ -1,20 +1,20 @@
-from .models import Product, Invoice, User
+from drf import models
 from rest_framework import serializers
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ('user_pk', 'username', 'password', 'role', )
+        model = models.User
+        fields = ('id', 'username')  # 'password'
 
 
 class InvoiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Invoice
-        fields = ('invoice_pk', 'name', 'type', 'amount', 'dummy', 'salesman', 'created_by', 'created_at', )
+        model = models.Invoice
+        fields = ('invoice_pk', 'name', 'type', 'amount', 'dummy', 'salesman', 'created_by', 'created_at')
 
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Product
-        fields = ('product_pk', 'name', 'price', 'dummy', 'created_by', 'created_at', )
+        model = models.Product
+        fields = ('product_pk', 'name', 'price', 'dummy', 'created_by', 'created_at')
